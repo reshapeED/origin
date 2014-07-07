@@ -8,10 +8,11 @@ tip = (gets.chomp).to_i
 
 def percent_to_value(total, percent)
 	partial_value = total*percent/100
+	return partial_value
 end
-tax_value = meal*tax/100
+tax_value = percent_to_value(meal, tax)
 meal_with_tax = meal + tax_value
-tip_value = meal*tip/100
+tip_value = percent_to_value(meal, tip)
 total_cost = meal_with_tax + tip_value
 
 #additionals
